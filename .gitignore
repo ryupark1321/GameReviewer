@@ -1,6 +1,6 @@
-dist
-node_modules/
-web_modules/
+backend/dist
+backend/node_modules/
+backend/web_modules/
 .npm
 .eslintcache
 .cache
