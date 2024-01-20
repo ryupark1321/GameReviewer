@@ -1,6 +1,8 @@
 backend/dist
 backend/node_modules/
 backend/web_modules/
+frontend/node_modules/
 .npm
 .eslintcache
+env/
 .cache
