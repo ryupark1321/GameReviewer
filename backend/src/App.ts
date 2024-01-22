@@ -2,6 +2,7 @@ import express, { Express, Request, Response } from "express";
 import { CohereClient, CohereError, CohereTimeoutError } from "cohere-ai";
 
 const axios = require('axios');
+const cors = require('cors');
 const app: Express = express();
 const PORT: number = 3001;
 const allGamesLink: String = 'https://api.steampowered.com/ISteamApps/GetAppList/v2/';
@@ -10,6 +11,13 @@ const cohere: CohereClient = new CohereClient({
 });
 const gameDetailLink: String = 'https://store.steampowered.com/api/appdetails?appids=';
 const gameReviewLink: String = "https://store.steampowered.com/appreviews/";
+
+var corsOptions = { 
+  origin: ['http://localhost:3000'],
+  optionsSuccessStatus: 200
+};
+
+app.use(cors(corsOptions));
 
 
 app.get("/", function (req: Request, res: Response) {
